@@ -17,11 +17,40 @@ apk --update add docker \
 	docker-compose \
 	tree
 
+##system dependency
+apk --update add cmake gcc g++ linux-headers libffi-dev openssl-dev \
+        openblas openblas-dev \
+        automake \
+        libgfortran \
+        build-base \
+        freetype \
+        libgcc \
+        subversion \
+    	tar gzip \
+        libxml2 \
+        libxml2-dev \
+        libxslt-dev gfortran \
+        libxslt \
+		libxslt-dev \
+		libgcc \
+		postgresql-dev 
+
+##system dependency
+apk --update add python3 \
+    python3-dev 
+
 ## 
 service docker start
 
 ## variables 
 WORKSHOP_ROOT=`dirname "$0"`
+
+## Ensure venv exists
+python3.8 -m venv ${DS_ROOT}/.venv
+## Install python dependency
+${DS_ROOT}/.venv/bin/pip install -r ${DS_ROOT}/requirements.txt
+
+
 echo ${WORKSHOP_ROOT}
 MY_IP=`/sbin/ip -4 -o addr show dev eth1| awk '{split($4,a,"/");print a[1]}'`
 RED='\033[0;31m'
