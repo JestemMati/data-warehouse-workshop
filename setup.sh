@@ -31,4 +31,5 @@ docker-compose -f ${WORKSHOP_ROOT}/docker-compose.yaml --no-recreate -d
 
 echo "We are ready to go!!!!"
 echo "Your ip is: ${MY_IP}"
+echo -e "Adminer available via: ${GREEN}http://${MY_IP}:8080${NC} in your browser"
 echo -e "Happy codding ${GREEN}:)${NC}"
