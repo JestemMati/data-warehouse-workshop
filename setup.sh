@@ -21,12 +21,13 @@ apk --update add docker \
 service docker start
 
 ## variables 
-DS_ROOT=`dirname "$0"`
+WORKSHOP_ROOT=`dirname "$0"`
 MY_IP=`/sbin/ip -4 -o addr show dev eth1| awk '{split($4,a,"/");print a[1]}'`
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
+docker-compose -f ${WORKSHOP_ROOT}/docker-compose.yaml --no-recreate -d
 
 echo "We are ready to go!!!!"
 echo "Your ip is: ${MY_IP}"
