@@ -14,6 +14,7 @@ echo "#http://ftp.icm.edu.pl/pub/Linux/distributions/alpine/edge/testing" >> /et
 
 ##system dependency
 apk --update add docker \
+	docker-compose \
 	tree
 
 ## 
