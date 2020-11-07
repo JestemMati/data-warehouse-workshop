@@ -101,3 +101,8 @@ if __name__ == '__main__':
     with open('sales_tab.txt', 'r') as f:
         for chunk in grouper(f, 2000):
             insert_list('sales', list(map(extract_tab_row, chunk)))
+
+    execute_sql('delete from date')
+    with open('date2008_pipe.txt', 'r') as f:
+        for chunk in grouper(f, 1000):
+            insert_list('date', list(map(lambda item: item.split('|'), chunk)))
