@@ -13,7 +13,7 @@ echo "#http://ftp.icm.edu.pl/pub/Linux/distributions/alpine/edge/testing" >> /et
 
 
 ##system dependency
-apk del cmake gcc g++ linux-headers libffi-dev openssl-dev 
+apk --update add docker
 
 ## variables 
 DS_ROOT=`dirname "$0"`
