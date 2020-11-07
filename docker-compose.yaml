@@ -22,7 +22,7 @@ services :
     image: adminer
     restart: always
     depends_on: 
-      - warehouse_db
-      - oltp_db
+      - warehouse
+      - oltp
     ports:
       - 8080:8080
