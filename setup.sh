@@ -22,6 +22,7 @@ service docker start
 
 ## variables 
 WORKSHOP_ROOT=`dirname "$0"`
+echo ${WORKSHOP_ROOT}
 MY_IP=`/sbin/ip -4 -o addr show dev eth1| awk '{split($4,a,"/");print a[1]}'`
 RED='\033[0;31m'
 GREEN='\033[0;32m'
