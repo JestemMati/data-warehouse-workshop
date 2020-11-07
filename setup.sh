@@ -13,7 +13,11 @@ echo "#http://ftp.icm.edu.pl/pub/Linux/distributions/alpine/edge/testing" >> /et
 
 
 ##system dependency
-apk --update add docker
+apk --update add docker \
+	tree
+
+## 
+service docker start
 
 ## variables 
 DS_ROOT=`dirname "$0"`
