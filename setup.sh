@@ -46,9 +46,11 @@ service docker start
 WORKSHOP_ROOT=`dirname "$0"`
 
 ## Ensure venv exists
-python3.8 -m venv ${DS_ROOT}/.venv
+python3.8 -m venv ${WORKSHOP_ROOT}/.venv
 ## Install python dependency
-${DS_ROOT}/.venv/bin/pip install -r ${DS_ROOT}/requirements.txt
+${WORKSHOP_ROOT}/.venv/bin/pip install -r ${WORKSHOP_ROOT}/requirements.txt
+
+wget https://docs.aws.amazon.com/redshift/latest/gsg/samples/tickitdb.zip || true
 
 
 echo ${WORKSHOP_ROOT}
