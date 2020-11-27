@@ -48,13 +48,23 @@ apk --update add python3 \
 ## 
 service docker start
 
-## variables 
+## variable 
 WORKSHOP_ROOT=`dirname "$0"`
 
 ## Ensure venv exists
 python3.8 -m venv ${WORKSHOP_ROOT}/.venv
 ## Install python dependency
 ${WORKSHOP_ROOT}/.venv/bin/pip install -r ${WORKSHOP_ROOT}/requirements.txt
+
+
+## cp jupyter cfg in place
+if [ ! -d "~/.jupyter" ]; then
+mkdir -p ~/.jupyter;
+fi
+
+cp ${WORKSHOP_ROOT}/files/jupyter-cfg/jupyter_notebook_config.json ~/.jupyter/jupyter_notebook_config.json
+cp ${WORKSHOP_ROOT}/files/jupyter-cfg/jupyter_notebook_config.py ~/.jupyter/jupyter_notebook_config.py
+
 
 wget -nc https://docs.aws.amazon.com/redshift/latest/gsg/samples/tickitdb.zip || true
 
