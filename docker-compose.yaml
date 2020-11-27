@@ -1,5 +1,13 @@
-version: '3.1'
+version: '3.6'
 services :
+  ecommerce:
+    image: "mariadb:10.4"
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - TZ=Europe/Sofia
+    
   warehouse:
     image: postgres:13-alpine
     ports:
@@ -24,6 +32,7 @@ services :
     depends_on: 
       - warehouse
       - oltp
+      - ecommerce
     ports:
       - 8080:8080
   grafana:
