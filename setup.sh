@@ -33,7 +33,9 @@ apk --update add cmake gcc g++ linux-headers libffi-dev openssl-dev \
         libxslt \
 		libxslt-dev \
 		libgcc \
-		postgresql-dev 
+		postgresql-dev \
+        openblas \
+	    wget
 
 apk --update add libxml2-dev libxslt-dev libffi-dev gcc musl-dev libgcc openssl-dev curl
 apk --update add  jpeg-dev zlib-dev freetype-dev lcms2-dev openjpeg-dev tiff-dev tk-dev tcl-dev
