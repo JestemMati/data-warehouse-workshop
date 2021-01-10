@@ -35,10 +35,3 @@ services :
       - ecommerce
     ports:
       - 8080:8080
-  grafana:
-    image: grafana/grafana
-    restart: always
-    depends_on: 
-      - warehouse
-    ports:
-      - 3000:3000
