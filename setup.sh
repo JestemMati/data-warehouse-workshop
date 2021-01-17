@@ -70,6 +70,7 @@ wget -nc https://docs.aws.amazon.com/redshift/latest/gsg/samples/tickitdb.zip ||
 
 
 echo ${WORKSHOP_ROOT}
+chmod 777 -R ${WORKSHOP_ROOT}/airflow
 MY_IP=`/sbin/ip -4 -o addr show dev eth1| awk '{split($4,a,"/");print a[1]}'`
 RED='\033[0;31m'
 GREEN='\033[0;32m'
