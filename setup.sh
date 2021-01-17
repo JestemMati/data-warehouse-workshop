@@ -75,7 +75,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
-docker-compose -f ${WORKSHOP_ROOT}/docker-compose.yaml up --no-recreate -d
+docker-compose -f ${WORKSHOP_ROOT}/docker-compose.yaml up -d
 
 echo "We are ready to go!!!!"
 echo "Your ip is: ${MY_IP}"
