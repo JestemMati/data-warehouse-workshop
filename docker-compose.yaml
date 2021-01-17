@@ -41,7 +41,6 @@ services :
       env_file:
           - .env
       volumes:
-          - ./airflow/home:/opt/airflow
           - ./airflow/dags:/opt/airflow/dags
           - ./airflow/logs:/opt/airflow/logs
           - ./airflow/plugins:/opt/airflow/plugins
@@ -52,7 +51,6 @@ services :
       env_file:
           - .env
       volumes:
-          - ./airflow/home:/opt/airflow
           - ./airflow/dags:/opt/airflow/dags
           - ./airflow/logs:/opt/airflow/logs
           - ./airflow/scripts:/opt/airflow/scripts
