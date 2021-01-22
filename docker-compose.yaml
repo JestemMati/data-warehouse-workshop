@@ -44,6 +44,7 @@ services :
           - ./airflow/dags:/opt/airflow/dags
           - ./airflow/logs:/opt/airflow/logs
           - ./airflow/plugins:/opt/airflow/plugins
+          - ./airflow/shared:/opt/airflow/shared
   airflowweb:
       image: apache/airflow
       entrypoint: ./scripts/entrypoint.sh
@@ -55,5 +56,6 @@ services :
           - ./airflow/logs:/opt/airflow/logs
           - ./airflow/scripts:/opt/airflow/scripts
           - ./airflow/plugins:/opt/airflow/plugins
+          - ./airflow/shared:/opt/airflow/shared
       ports:
           - 8181:8080
